@@ -1,4 +1,14 @@
 # ASP.NET
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'DeployMVC - Azure'
+    appType: 'webApp'
+    WebAppName: 'DeployMVC'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'DeployMVC-rg'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'DeployMVC - Azure'
